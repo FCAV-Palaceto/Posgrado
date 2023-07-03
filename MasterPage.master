@@ -1,0 +1,247 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>FCAV División de Estudios de Posgrado e Investigación</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <%-- <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache"> --%>
+
+    <!-- Favicons -->
+    <link href="assets/img/fcav.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- CSS para el Menú en móvil -->
+    <link rel="stylesheet" href="assets/css/styleMenu.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style> 
+        @media only screen and (max-width: 600px) {
+          .imgs {
+            display:none;
+          }
+        }
+
+        @media screen and (max-width: 991px) {
+        #lics, #submenu{
+            display:none;
+        }
+        #menu {
+            display:block;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        #menu{
+            display:none;
+        }
+
+      }
+
+      @media screen and (max-width: 500px){
+	    .img_logom{
+            display:block !important;
+         }
+        .img_logo{
+            display:none !important;
+         }
+
+      }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- ======= Top Bar ======= -->
+    <!-- Agregué el margin bottom negativo para reducir el espacio en blanco entre el header y el navbar -->
+    <%--<div class="container d-flex justify-content-center justify-content-md-between">        
+            <div class="float-end me-5" style="margin-left:auto;">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="/Posgrado/Servicios/Servicios_Alumnos.aspx">Alumnos Posgrado</a></li>
+                    <li class="list-inline-item mx-1">/</li>
+                    <li class="list-inline-item"><a href="/Posgrado/Servicios/Servicios_Docentes.aspx">Docentes Posgrado</a></li>--%>
+                    <%-- <li class="list-inline-item mx-1">/</li>
+                    <li class="list-inline-item"><a href="http://svrtmp.main.conacyt.mx/ConsultasPNPC/inicio.php" target="_blank">Sistema de Consultas PNPC</a></li> --%>
+                <%--</ul>
+            </div>                   
+    </div>--%>
+
+    <div class="container d-flex justify-content-center justify-content-md-between">        
+            <div class="float-end ico" style="margin-left:auto;">
+                <div class="list-inline">
+                    <ul>
+                    
+                    <a class="list-inline-item mx-1" data-toggle="tooltip" href="https://micorreo.uat.edu.mx/" target="_blank" role="button" aria-haspopup="true" title="Correo">
+                    <i class="fa fa-envelope" style="color:#5cb874"></i>
+                    </a>
+                    <a class="list-inline-item mx-1" href="https://pagosenlinea.uat.edu.mx/pago_fichas/" target="_blank" role="button" aria-haspopup="true" title="Pagos en Línea"><b>|</b>
+                    <i class="fa fa-credit-card" style="color:#5cb874"></i>
+                    </a>
+
+                    <li class="list-inline-item"><a href="/Posgrado/Servicios/Servicios_Alumnos.aspx"><b>| Alumnos Posgrado</b></a></li>
+
+                    <li class="list-inline-item"><a href="/Posgrado/Servicios/Servicios_Docentes.aspx"><b>| Docentes Posgrado</b></a></li>
+                    
+                    
+                        </ul>
+                </div>
+            </div>                   
+    </div>
+
+    <div class="container d-flex justify-content-center justify-content-md-between position-relative" style="margin-bottom:-18px; margin-top: -18px;">
+        <img class="img_logo" src="<%= Page.ResolveUrl("~")%>assets/img/header/thumbnail_header2.png" alt="uat-fcav-logos" style="width: 100%;">
+        <img class="img_logom" src="<%= Page.ResolveUrl("~")%>assets/img/header/headerm.png" alt="uat-fcav-logos" style="width: 100%;display:none;">
+    </div>
+    
+    <!-- End Top Bar -->
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex">
+        <div class="container d-flex">
+            <!-- Navbar -->
+            <nav id="navbar" class="navbar w-100">
+                <div id="menuprincipal" class="row w-100 mx-auto">
+                    <ul id="navbarm">
+                        <li class="col d-flex justify-content-center"><a class="nav-link scrollto logo" href="/Posgrado/Inicio.aspx">INICIO</a></li>
+                        <%-- <div class="col d-flex justify-content-center">
+                            <li class="dropdown"><a class="nav-link scrollto logo" href="#">ACERCA DE <i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/Posgrado/Acerca_de/Filosofia/Filosofia_Mision.aspx">FILOSOF&Iacute;A</a></li>
+                                    <li><a href="/Posgrado/Acerca_de/Historia/Historia.aspx">HISTORIA</a></li>
+                                    <li><a href="/Posgrado/Acerca_de/Certificaciones/Certificaciones.aspx">CERTIFICACIONES</a></li>
+                                    <li><a href="/Posgrado/Acerca_de/Reglamento/Reglamento.aspx">REGLAMENTO</a></li>
+                                </ul>
+
+                            </li>
+                        </div> --%>
+                        <div class="col d-flex justify-content-center">
+                            <li class="dropdown"><a class="nav-link scrollto logo" href="#">OFERTA ACAD&Eacute;MICA<i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a id="masters" href="/Posgrado/Oferta_Academica/mde2015/MDE/Maestria_Inicio.aspx">MAESTR&Iacute;A</a></li>
+                                    <li><a id="doctorados" href="/Posgrado/Oferta_Academica/secciones2015/DCA/Doctorado_Inicio.aspx">DOCTORADO</a></li>
+                                    <li><a href="/Posgrado/Oferta_Academica/Educacion_Continua/Seminarios/Seminario_Titulacion.aspx">EDUCACI&Oacute;N CONTINUA</a></li>
+                                    <li><a href="https://fcav.uat.edu.mx/FCAV.aspx">LICENCIATURAS</a></li>
+                                    
+                                </ul>
+
+                            </li>
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <li class="dropdown"><a class="nav-link scrollto logo" href="#">INVESTIGACI&Oacute;N<i class="bi bi-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="/Posgrado/Investigacion/Cuerpos_Academicos/CA/UAT-CA-60.aspx">CUERPOS ACAD&Eacute;MICOS</a></li> 
+                                    <li><a href="https://fcav.uat.edu.mx/coloquio/index.html">COLOQUIO DE INVESTIGACIÓN</a></li>
+                                </ul>
+
+                            </li>
+                        </div>
+                        <!-- <li class="col-3 d-flex justify-content-center"><a class="nav-link scrollto logo" target="_blank" href="https://fcav.uat.edu.mx/LER/">LABER</a></li> -->
+                    </ul>
+                </div>
+                <i id="clsbtn" class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <!-- ======= Footer ======= -->
+    <div class="container">
+        <footer id="footer">
+            <div class="container">
+                <h3>Divisi&oacute;n de Estudios de Posgrado e Investigaci&oacute;n</h3>
+                <p style="margin-bottom:-10px;">
+                    Universidad Aut&oacute;noma de Tamaulipas
+                    <br />
+                    Centro Universitario Victoria - FCAV, C.P. 87000 
+                    <br />
+                    Cd. Victoria, Tamaulipas, M&eacute;xico.
+                    <br />
+                    Tel. (+52 834) 318 1800, Extensiones 2413, 2451 y 2452.</i>                                        
+                    <br />
+                    <%--Horario de Atención
+                    <br />
+                    Lunes a Viernes
+                    <br />
+                    De 9:00 a 19:00 Hrs.--%>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="<%= Page.ResolveUrl("~")%>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<%= Page.ResolveUrl("~")%>assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="<%= Page.ResolveUrl("~")%>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="<%= Page.ResolveUrl("~")%>assets/vendor/php-email-form/validate.js"></script>
+    <script src="<%= Page.ResolveUrl("~")%>assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="<%= Page.ResolveUrl("~")%>assets/js/main.js"></script>
+
+
+<!-- Scripts para el Menú en móvil -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="<%= Page.ResolveUrl("~")%>assets/js/scriptMenu.js"></script>
+    <script src="<%= Page.ResolveUrl("~")%>assets/js/maestrias.js"></script>
+    <script src="<%= Page.ResolveUrl("~")%>assets/js/doctorados.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            if ($(window).width() <= 991) {
+                $("#menuprincipal").removeClass("row");
+                $("#menuprincipal").removeClass("w-100");
+                $("#menuprincipal").removeClass("mx-auto");
+            }
+        });
+
+        $(window).resize(function () {
+            if ($(window).width() <= 991) {
+                $("#menuprincipal").removeClass("row");
+                $("#menuprincipal").removeClass("w-100");
+                $("#menuprincipal").removeClass("mx-auto");
+            }
+            else {
+                $("#menuprincipal").addClass("row");
+                $("#menuprincipal").addClass("w-100");
+                $("#menuprincipal").addClass("mx-auto");
+            }
+        });
+
+    </script>
+</body>
+</html>
